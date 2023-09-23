@@ -148,9 +148,7 @@ char animal[5][20]  //선언
 scanf("%s",animal[i]) // 전체 배열의 각 요소가 배열명이므로, &없이 사용 가능
 
 //초기화
-{% raw %}
 char animal[5][10]= { {'d','o','g','\0'},{'c','a','t','\0'} };
-{% endraw %}
 //일부 생략 가능
 //마지막에 null 넣어줘야 함
 char animal[][10]={"dog","cat"};
@@ -185,11 +183,9 @@ char *pary[5] ={"dog","elephant","cat"};  //char 포인터 배열은 특별함.
       	{5,6,7,8},
       	{9,10,11,12}
       };
-    {% raw %}
       char *str[3]= {
         {'d','o','g','\0'},
       };
-    {% endraw %}
     ```
     
     ![컴파일 에러2](./img/2arrayerror.png)
