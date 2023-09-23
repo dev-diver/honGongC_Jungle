@@ -1,4 +1,4 @@
-# 혼공C_Jungle
+{% assign link ="https://github.com/dev-diver/honGongC_Jungle/tree/page" %}
 ## 차례
 1. [프로그램 만들기](/ch01/README.md)
 2. [상수와 데이터 출력](/ch02/README.md)
@@ -18,3 +18,5 @@
 16. [메모리 동적 할당](/ch16/README.md)
 17. [사용자 정의 자료형](/ch17/README.md)
 18. [파일 입출력](/ch18/README.md)
+
+[Github]({{ link }})
