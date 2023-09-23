@@ -51,9 +51,9 @@ int num[3][4] = {1,2,3,4,5,6};  // 연속 메모리이므로 순서대로 초기
 //1 2 3 4
 //5 6 0 0
 //0 0 0 0
-{% raw %}
+
 int num[][4] = { {1},{2,3},{4,5,6} }; //1차원 배열에서 크기를 정하지 않을 때처럼 자동으로 크기가 정해짐
-{% endraw %}
+
 int num[][4] = {1,2,3,4,5,6};   // 4열로 알아서 끊어주고, 크기도 자동으로 정해진다.
 //1 2 3 4
 //5 6 0 0
@@ -82,7 +82,7 @@ printf("row:%d,col:%d",row,col);
     int num[][];  //컴파일 에러
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/66d8752d-3be4-4738-b470-67f1773c7ea6/5bdaa648-0c5e-4197-bf73-7286af8eed03/Untitled.png)
+    ![컴파일 에러1](./img/1arrayerror.png)
     
     - 생략 하려면 배열의 배열이 아닌, 포인터의 배열을 쓰자.
         
@@ -119,12 +119,10 @@ printf("row:%d,col:%d",row,col);
     //int 형
     int main(void)
     {
-      {% raw %}
       int str[2][3]={
         {1,2,3,4},
         {1,2,3,4}
       };
-      {% endraw %}
       printf("%d",str[1][0]);    //1
     }
     
@@ -146,18 +144,18 @@ printf("row:%d,col:%d",row,col);
 ### 2차원 char 배열
 
 ```c
-{% raw %}
-char animal[5][20]  //선언언
+char animal[5][20]  //선언
 scanf("%s",animal[i]) // 전체 배열의 각 요소가 배열명이므로, &없이 사용 가능
 
 //초기화
-char animal[5][10]= {{'d','o','g','\0'},{'c','a','t','\0'}};
+{% raw %}
+char animal[5][10]= { {'d','o','g','\0'},{'c','a','t','\0'} };
+{% endraw %}
 //일부 생략 가능
 //마지막에 null 넣어줘야 함
 char animal[][10]={"dog","cat"};
 //행 생략 가능 
 ```
-{% endraw %}
 ### 3차원 배열
 
 ```c
@@ -182,20 +180,19 @@ char *pary[5] ={"dog","elephant","cat"};  //char 포인터 배열은 특별함.
 - 다른 타입의 포인터 배열은 불가능
     
     ```c
-    {% raw %}
     int *num[3] = {  //초기화 
       	{1,2,3,4},
       	{5,6,7,8},
       	{9,10,11,12}
       };
-    
+    {% raw %}
       char *str[3]= {
         {'d','o','g','\0'},
       };
     {% endraw %}
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/66d8752d-3be4-4738-b470-67f1773c7ea6/f1dbf1e3-55a1-4e33-a0e5-b810d938c403/Untitled.png)
+    ![컴파일 에러2](./img/2arrayerror.png)
     
     - 아래 코드가 불가능하기 때문
     
@@ -203,9 +200,7 @@ char *pary[5] ={"dog","elephant","cat"};  //char 포인터 배열은 특별함.
     int *num = {1,2,3};
     char *str = "dog"; //이건 됨
     ```
-    
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/66d8752d-3be4-4738-b470-67f1773c7ea6/f405c92b-7120-4743-8505-a56df85d541a/Untitled.png)
-    
+    ![컴파일 에러3](./img/3arrayerror.png)
 
 ## 도전실전예제
 
@@ -213,7 +208,7 @@ char *pary[5] ={"dog","elephant","cat"};  //char 포인터 배열은 특별함.
     
     ```c
     #include <stdio.h>
-    {% raw %}
+    
     int main() {
     
       int ary[5][6] = {
@@ -254,7 +249,6 @@ char *pary[5] ={"dog","elephant","cat"};  //char 포인터 배열은 특별함.
       
       return 0;
     }
-    {% endraw %}
     ```
     
 - 정답 풀이 - 반복을 덜 쓰기
