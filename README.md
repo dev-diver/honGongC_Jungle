@@ -20,10 +20,4 @@
 
 ---
 
-<center>
-
-[Home](https://dev-diver.github.io/honGongC_Jungle/)
-
-[Github Repo](https://github.com/dev-diver/honGongC_Jungle/tree/page)
-
-</center>
+[Home](https://dev-diver.github.io/honGongC_Jungle/) | [Github Repo](https://github.com/dev-diver/honGongC_Jungle/tree/page)
